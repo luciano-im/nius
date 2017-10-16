@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
 import 'whatwg-fetch';
-import Promise from 'promise-polyfill'; 
+import Promise from 'promise-polyfill';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -10,7 +10,6 @@ import registerServiceWorker from './registerServiceWorker';
 if (!window.Promise) {
   window.Promise = Promise;
 }
-
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

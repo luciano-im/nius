@@ -1,28 +1,9 @@
 import React, { Component } from 'react';
 import NewsList from './components/NewsList'
-import Search from './components/Search'
+import Category from './components/Category'
+// import Sources from './components/Sources'
 
 const API_KEY = '62a5f2039f7e4057acc89f4c1fbf17dd';
-
-const SOURCES = {"status":"ok",
-                 "sources": [
-                  {"id":"abc-news-au","name":"ABC News (AU)","description":"Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.","url":"http://www.abc.net.au/news","category":"general","language":"en","country":"au","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top"]},
-                  {"id":"al-jazeera-english","name":"Al Jazeera English","description":"News, analysis from the Middle East and worldwide, multimedia and interactives, opinions, documentaries, podcasts, long reads and broadcast schedule.","url":"http://www.aljazeera.com","category":"general","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},
-                  {"id":"ars-technica","name":"Ars Technica","description":"The PC enthusiast's resource. Power users and the tools they love, without computing religion.","url":"http://arstechnica.com","category":"technology","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},
-                  {"id":"associated-press","name":"Associated Press","description":"The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.","url":"https://apnews.com/","category":"general","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top"]},
-                  {"id":"bbc-news","name":"BBC News","description":"Use BBC News for up-to-the-minute news, breaking news, video, audio and feature stories. BBC News provides trusted World and UK news as well as local and regional perspectives. Also entertainment, business, science, technology and health news.","url":"http://www.bbc.co.uk/news","category":"general","language":"en","country":"gb","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top"]},
-                  {"id":"bbc-sport","name":"BBC Sport","description":"The home of BBC Sport online. Includes live sports coverage, breaking news, results, video, audio and analysis on Football, F1, Cricket, Rugby Union, Rugby League, Golf, Tennis and all the main world sports, plus major events such as the Olympic Games.","url":"http://www.bbc.co.uk/sport","category":"sport","language":"en","country":"gb","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top"]},
-                  {"id":"bild","name":"Bild","description":"Die Seite 1 für aktuelle Nachrichten und Themen, Bilder und Videos aus den Bereichen News, Wirtschaft, Politik, Show, Sport, und Promis.","url":"http://www.bild.de","category":"general","language":"de","country":"de","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},
-                  {"id":"bloomberg","name":"Bloomberg","description":"Bloomberg delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News.","url":"http://www.bloomberg.com","category":"business","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top"]},
-                  {"id":"breitbart-news","name":"Breitbart News","description":"Syndicated news and opinion website providing continuously updated headlines to top news and analysis sources.","url":"http://www.breitbart.com","category":"politics","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},
-                  {"id":"business-insider","name":"Business Insider","description":"Business Insider is a fast-growing business site with deep financial, media, tech, and other industry verticals. Launched in 2007, the site is now the largest business news site on the web.","url":"http://www.businessinsider.com","category":"business","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},
-                  {"id":"business-insider-uk","name":"Business Insider (UK)","description":"Business Insider is a fast-growing business site with deep financial, media, tech, and other industry verticals. Launched in 2007, the site is now the largest business news site on the web.","url":"http://uk.businessinsider.com","category":"business","language":"en","country":"gb","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},
-                  {"id":"buzzfeed","name":"Buzzfeed","description":"BuzzFeed is a cross-platform, global network for news and entertainment that generates seven billion views each month.","url":"https://www.buzzfeed.com","category":"entertainment","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},{"id":"cnbc","name":"CNBC","description":"Get latest business news on stock markets, financial & earnings on CNBC. View world markets streaming charts & video; check stock tickers and quotes.","url":"http://www.cnbc.com","category":"business","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top"]},
-                  {"id":"cnn","name":"CNN","description":"View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN","url":"http://us.cnn.com","category":"general","language":"en","country":"us","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top"]},
-                  {"id":"daily-mail","name":"Daily Mail","description":"All the latest news, sport, showbiz, science and health stories from around the world from the Daily Mail and Mail on Sunday newspapers.","url":"http://www.dailymail.co.uk/home/index.html","category":"entertainment","language":"en","country":"gb","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["top","latest"]},
-                  {"id":"der-tagesspiegel","name":"Der Tagesspiegel","description":"Nachrichten, News und neueste Meldungen aus dem Inland und dem Ausland - aktuell präsentiert von tagesspiegel.de.","url":"http://www.tagesspiegel.de","category":"general","language":"de","country":"de","urlsToLogos":{"small":"","medium":"","large":""},"sortBysAvailable":["latest"]}
-                 ]
-                };
 
 const NEWS = {"status":"ok",
                "source":
@@ -37,31 +18,62 @@ const NEWS = {"status":"ok",
              };
 
 
-function categories(sources) {
-  let lookup = {};
-  let category = [];
-  sources.forEach((source) => {
-    if(!(source.category in lookup)) {
-      lookup[source.category] = true
-      category.push(source.category);
-    }
-  });
-
-  return category
-}
-
 class App extends Component {
+  constructor(props) {
+		super(props);
+		this.state = {
+      'sources': [],
+      'category': 'technology'
+    };
+	}
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Nius</h1>
         </header>
-        //<Search categories={categories(SOURCES.sources)} />
+        <Category sources={this.categories(this.state.sources)} category={this.state.category} />
         <NewsList news={NEWS} />
       </div>
     );
   }
+
+  //<Sources sources={this.state.sources} category={this.state.category} />
+
+  componentWillMount() {
+    this.fetchSources();
+    // this.fetchNews(this.state.category);
+  }
+
+  categories(sources) {
+    let lookup = {};
+    let category = [];
+    sources.forEach((source) => {
+      if(!(source.category in lookup)) {
+        lookup[source.category] = true
+        category.push(source.category);
+      }
+    });
+
+    return category
+  }
+
+  fetchSources() {
+    const URL = 'https://newsapi.org/v1/sources?language=en';
+
+    fetch(URL).then((res) => res.json()).then((data) => {
+      // update state with API data
+      this.setState({
+        'sources': data.sources
+      });
+    })
+  }
+
+  fetchNews(category) {
+    const URL = ''
+  }
+
 }
 
 export default App;
