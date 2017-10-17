@@ -14,7 +14,9 @@ class Sources extends Component {
 
     let sources = [];
     for (var k in sourcesByCategory) {
-      sources.push(<SourceSingle key={k} sources={sourcesByCategory[k]} category={k} />);
+      if(k === this.props.category) {
+        sources.push(<SourceSingle key={k} sources={sourcesByCategory[k]} category={k} />);
+      }
     }
 
     return (

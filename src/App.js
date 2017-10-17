@@ -25,6 +25,8 @@ class App extends Component {
 		this.state = {
       'sources': [],
       'category': 'technology',
+      'media': ['techcrunch'],
+      'news': []
     };
 	}
 
@@ -49,7 +51,22 @@ class App extends Component {
       this.setState({
         'sources': data.sources
       });
-    })
+    });
+  }
+
+  fetchNews(media) {
+    const URL = 'https://newsapi.org/v1/articles?sortBy=latest&apiKey='+API_KEY+'&source=';
+    let newsList = [];
+
+    media.map(function(mediaSource, i) {
+      fetch(URL+mediaSource).then((res) => res.json()).then((data) => {
+        newsList.push(data);
+      });
+    });
+
+    this.setState({
+        'news': newsList
+    });
   }
 
   handleCategoryChange(event) {
@@ -60,7 +77,7 @@ class App extends Component {
 
   componentWillMount() {
     this.fetchSources();
-    // this.fetchNews(this.state.category);
+    this.fetchNews(this.state.media);
   }
 
   render() {
@@ -71,7 +88,7 @@ class App extends Component {
         </header>
         <Category sources={this.categories(this.state.sources)} value={this.state.category} onChange={this.handleCategoryChange} />
         <Sources sources={this.state.sources} category={this.state.category} />
-        <NewsList news={NEWS} />
+        <NewsList news={this.state.news} />
       </div>
     );
   }
