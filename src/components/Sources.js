@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
+import SourceSingle from './SourceSingle';
 
 class Sources extends Component {
-	constructor(props) {
-		super(props);
-	}
 
   render() {
+    let sourcesByCategory = {};
+		this.props.sources.map(function(source, i) {
+      if(!(source.category in sourcesByCategory)) {
+        sourcesByCategory[source.category] = []
+      }
+			sourcesByCategory[source.category].push(source.name)
+		});
+
     let sources = [];
+    for (var k in sourcesByCategory) {
+      sources.push(<SourceSingle key={k} sources={sourcesByCategory[k]} category={k} />);
+    }
+
     return (
-      <p>{this.props.sources}</p>
+      <div className="sources">
+        {sources}
+      </div>
     )
   }
 

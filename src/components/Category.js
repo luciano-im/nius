@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
 
 class Category extends Component {
-	constructor(props) {
-		super(props);
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-	}
 
-	handleSubmit(event) {
-		alert('Category is: ' + this.state.category);
-		event.preventDefault();
-	}
-
-	handleChange(event) {
-		this.setState({
-			'category': event.target.value
-		});
-		event.preventDefault();
-	}
+	// componentWillReceiveProps(props) {
+	// 	const selected = this.props.value;
+	// 	this.setState({
+	// 		category: selected
+	// 	});
+	// }
 
 	render() {
 		let options = [];
@@ -26,12 +16,9 @@ class Category extends Component {
 		});
 
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<select value={this.props.category} onChange={this.handleChange}>
-					{options}
-				</select>
-				<input type="submit" value="Submit" />
-			</form>
+			<select className="category-select" value={this.props.value} onChange={this.props.onChange}>
+				{options}
+			</select>
 		)
 	}
 }

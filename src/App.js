@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import NewsList from './components/NewsList'
-import Category from './components/Category'
-// import Sources from './components/Sources'
+import NewsList from './components/NewsList';
+import Category from './components/Category';
+import Sources from './components/Sources';
 
 const API_KEY = '62a5f2039f7e4057acc89f4c1fbf17dd';
 
@@ -21,30 +21,12 @@ const NEWS = {"status":"ok",
 class App extends Component {
   constructor(props) {
 		super(props);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this)
 		this.state = {
       'sources': [],
-      'category': 'technology'
+      'category': 'technology',
     };
 	}
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Nius</h1>
-        </header>
-        <Category sources={this.categories(this.state.sources)} category={this.state.category} />
-        <NewsList news={NEWS} />
-      </div>
-    );
-  }
-
-  //<Sources sources={this.state.sources} category={this.state.category} />
-
-  componentWillMount() {
-    this.fetchSources();
-    // this.fetchNews(this.state.category);
-  }
 
   categories(sources) {
     let lookup = {};
@@ -70,8 +52,28 @@ class App extends Component {
     })
   }
 
-  fetchNews(category) {
-    const URL = ''
+  handleCategoryChange(event) {
+		this.setState({
+			'category': event.target.value
+		});
+	}
+
+  componentWillMount() {
+    this.fetchSources();
+    // this.fetchNews(this.state.category);
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <header className="app-header">
+          <h1 className="app-title">Nius</h1>
+        </header>
+        <Category sources={this.categories(this.state.sources)} value={this.state.category} onChange={this.handleCategoryChange} />
+        <Sources sources={this.state.sources} category={this.state.category} />
+        <NewsList news={NEWS} />
+      </div>
+    );
   }
 
 }
