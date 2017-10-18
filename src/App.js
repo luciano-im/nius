@@ -3,8 +3,6 @@ import NewsList from './components/NewsList';
 import Category from './components/Category';
 import Sources from './components/Sources';
 
-const API_KEY = '62a5f2039f7e4057acc89f4c1fbf17dd';
-
 class App extends Component {
   constructor(props) {
 		super(props);
@@ -13,9 +11,14 @@ class App extends Component {
 		this.state = {
       'sources': [],
       'category': 'technology',
-      'media': ['techcrunch'],
-      'news': []
+      'media': ['techcrunch']
     };
+    // this.state = {
+    //   'sources': [],
+    //   'category': 'technology',
+    //   'media': ['techcrunch'],
+    //   'news': []
+    // };
 	}
 
   categories(sources) {
@@ -42,20 +45,20 @@ class App extends Component {
     });
   }
 
-  fetchNews(media) {
-    const URL = 'https://newsapi.org/v1/articles?sortBy=latest&apiKey='+API_KEY+'&source=';
-    let newsList = [];
-
-    media.map(function(mediaSource, i) {
-      fetch(URL+mediaSource).then((res) => res.json()).then((data) => {
-        newsList.push(data);
-      });
-    });
-
-    this.setState({
-        'news': newsList
-    });
-  }
+  // fetchNews(media) {
+  //   const URL = 'https://newsapi.org/v1/articles?sortBy=latest&apiKey='+API_KEY+'&source=';
+  //   let newsList = [];
+  //
+  //   media.map(function(mediaSource, i) {
+  //     fetch(URL+mediaSource).then((res) => res.json()).then((data) => {
+  //       newsList.push(data);
+  //     });
+  //   });
+  //
+  //   this.setState({
+  //       'news': newsList
+  //   });
+  // }
 
   handleCategoryChange(event) {
 		this.setState({
@@ -84,7 +87,7 @@ class App extends Component {
 
   componentWillMount() {
     this.fetchSources();
-    this.fetchNews(this.state.media);
+    // this.fetchNews(this.state.media);
   }
 
   render() {
@@ -95,7 +98,7 @@ class App extends Component {
         </header>
         <Category sources={this.categories(this.state.sources)} value={this.state.category} onChange={this.handleCategoryChange} />
         <Sources sources={this.state.sources} category={this.state.category} media={this.state.media} onChange={this.handleSourceChange} />
-        <NewsList news={this.state.news} category={this.state.category} />
+        <NewsList category={this.state.category} media={this.state.media} />
       </div>
     );
   }
