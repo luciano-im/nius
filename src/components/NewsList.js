@@ -25,28 +25,19 @@ class NewsList extends Component {
 		return newsList;
   }
 
-	// componentDidUpdate(prevProps, prevState) {
-	// 	let news = this.fetchNews(prevProps.media);
+	// componentDidMount() {
+  //   let news = this.fetchNews(this.props.media);
 	// 	this.setState({
 	// 		'news': news
 	// 	});
-	// }
+  // }
 
-	componentWillMount() {
-    let news = this.fetchNews(this.props.media);
-		this.setState({
-			'news': news
-		});
-  }
-
-	componentWillReceiveProps(nextProps) {
-	  // console.log(nextProps);
-		// console.log(this.props.media);
-		// console.log(nextProps.media);
-		let news = this.fetchNews(nextProps.media);
-		this.setState({
-			'news': news
-		});
+	componentDidUpdate(prevProps, prevState) {
+		console.log(prevProps, this.props);
+		// let news = this.fetchNews(prevProps.media);
+		// this.setState({
+		// 	'news': news
+		// });
 	}
 
 	render() {

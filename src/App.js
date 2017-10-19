@@ -67,8 +67,13 @@ class App extends Component {
 	}
 
   handleSourceChange(event) {
-    let currentMedia = this.state.media;
+    //con slice() hago una copia del array en currentMedia en vez de una referencia
+    //si hiciera una referencia, dentro de NewsList tanto this.props como prevProps son iguales
+    //ya que se trata del mismo array, y no es posible comparar el estado actual con el previo.
+    let currentMedia = this.state.media.slice();
     let media = event.target.value;
+
+    console.log(currentMedia);
 
     if (event.target.checked === true) {
       currentMedia.push(media);
