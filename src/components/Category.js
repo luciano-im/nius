@@ -2,13 +2,6 @@ import React, { Component } from 'react';
 
 class Category extends Component {
 
-	// componentWillReceiveProps(props) {
-	// 	const selected = this.props.value;
-	// 	this.setState({
-	// 		category: selected
-	// 	});
-	// }
-
 	render() {
 		let options = [];
 		this.props.sources.map(function(opt, i) {

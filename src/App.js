@@ -13,12 +13,6 @@ class App extends Component {
       'category': 'technology',
       'media': ['techcrunch']
     };
-    // this.state = {
-    //   'sources': [],
-    //   'category': 'technology',
-    //   'media': ['techcrunch'],
-    //   'news': []
-    // };
 	}
 
   categories(sources) {
@@ -45,21 +39,6 @@ class App extends Component {
     });
   }
 
-  // fetchNews(media) {
-  //   const URL = 'https://newsapi.org/v1/articles?sortBy=latest&apiKey='+API_KEY+'&source=';
-  //   let newsList = [];
-  //
-  //   media.map(function(mediaSource, i) {
-  //     fetch(URL+mediaSource).then((res) => res.json()).then((data) => {
-  //       newsList.push(data);
-  //     });
-  //   });
-  //
-  //   this.setState({
-  //       'news': newsList
-  //   });
-  // }
-
   handleCategoryChange(event) {
 		this.setState({
 			'category': event.target.value
@@ -72,8 +51,6 @@ class App extends Component {
     //ya que se trata del mismo array, y no es posible comparar el estado actual con el previo.
     let currentMedia = this.state.media.slice();
     let media = event.target.value;
-
-    console.log(currentMedia);
 
     if (event.target.checked === true) {
       currentMedia.push(media);
@@ -92,7 +69,6 @@ class App extends Component {
 
   componentWillMount() {
     this.fetchSources();
-    // this.fetchNews(this.state.media);
   }
 
   render() {

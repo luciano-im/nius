@@ -11,10 +11,11 @@ class News extends Component {
 				<p>{data.author}</p>
 				<p>{data.title}</p>
 				<p>{data.description}</p>
-				<img src={data.urlToImage} alt={data.title} />
 				<a href={data.url}>Link</a>
 			</div>
-		)		
+		)
+
+		// <img src={data.urlToImage} alt={data.title} />	
 	}
 }
 
