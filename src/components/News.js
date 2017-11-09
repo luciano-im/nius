@@ -7,6 +7,7 @@ class News extends Component {
 
 		return (
 			<div>
+				<hr></hr>
 				<p>{data.publishedAt}</p>
 				<p>{data.author}</p>
 				<p>{data.title}</p>
@@ -15,7 +16,7 @@ class News extends Component {
 			</div>
 		)
 
-		// <img src={data.urlToImage} alt={data.title} />	
+		// <img src={data.urlToImage} alt={data.title} />
 	}
 }
 

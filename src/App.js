@@ -11,7 +11,7 @@ class App extends Component {
 		this.state = {
       'sources': [],
       'category': 'technology',
-      'media': ['techcrunch']
+      'media': []
     };
 	}
 
@@ -41,7 +41,8 @@ class App extends Component {
 
   handleCategoryChange(event) {
 		this.setState({
-			'category': event.target.value
+			'category': event.target.value,
+      'media': []
 		});
 	}
 
