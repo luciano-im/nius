@@ -1,0 +1,28 @@
+/* Triangles */
+triangle(type = '', color = '', top = '', right = '', bottom = '', left = '')
+	border-bottom bottom solid transparent
+	border-left left solid transparent
+	border-right right solid transparent
+	border-top top solid transparent
+	content ""
+	display inline-block
+	if type == 'top'
+		border-top-color color
+	if type == 'right'
+		border-right-color color
+	if type == 'bottom'
+		border-bottom-color color
+	if type == 'left'
+		border-left-color color
+
+
+//Horizontal List
+.h-list
+	li
+		display inline-block
+		list-style none
+
+
+//No Transition applied
+.no-transition
+	transition none !important
