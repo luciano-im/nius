@@ -9,7 +9,7 @@ class Category extends Component {
 		});
 
 		return (
-			<select className="category-select" value={this.props.value} onChange={this.props.onChange}>
+			<select className="category-select custom-select form-control form-control-lg" value={this.props.value} onChange={this.props.onChange}>
 				{options}
 			</select>
 		)

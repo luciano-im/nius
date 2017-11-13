@@ -8,8 +8,9 @@ class SourceRow extends Component {
     const checked = this.props.checked;
 
     return (
-      <label>
-        <input type="checkbox" value={value} checked={checked} onChange={this.props.onChange} />
+      <label className="custom-control custom-checkbox">
+        <input className="custom-control-input" type="checkbox" value={value} checked={checked} onChange={this.props.onChange} />
+        <span class="custom-control-indicator"></span>
         {sourceName}
       </label>
     )

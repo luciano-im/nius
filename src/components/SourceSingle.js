@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SourceCategoryRow from './SourceCategoryRow';
 import SourceRow from './SourceRow';
 
 class SourceSingle extends Component {
@@ -14,18 +13,19 @@ class SourceSingle extends Component {
     sources.map((source, i) => {
       let checked = media.includes(source.id)
       rows.push(
-        <li key={i} className="sources-item">
+        <li key={i} className="sources-item form-check">
           <SourceRow value={source.id} sourceName={source.name} checked={checked} onChange={onChange} />
         </li>
       );
+      //form-check-inline
     });
 
     return (
       <ul className={`sources-list ${category}`}>
-        <SourceCategoryRow key={category} category={category} />
         {rows}
       </ul>
     )
+    //<SourceCategoryRow key={category} category={category} />
   }
 
 }

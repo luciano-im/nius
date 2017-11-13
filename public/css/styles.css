@@ -35,9 +35,64 @@ body {
 }
 html {
   color: #3c3c3b;
-  font-family: 'Merriweather', serif;
+  font-family: $merriweather;
   font-size: 16px;
 }
 a {
   text-decoration: none;
+}
+.app .app-header {
+  background: #5cc7b2;
+  color: #fff;
+  padding: 2em 0;
+  text-align: center;
+}
+.app .app-header h1 {
+  margin-bottom: 1em;
+  text-shadow: 2px 2px 0px #47b7a1;
+}
+.app .app-header .category-select {
+  border: 3px solid #47b7a1;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 300px;
+}
+.app .sources {
+  background: rgba(0,0,0,0.1);
+  padding: 1.5em 1.5em 1em 1.5em;
+}
+.app .sources .sources-list {
+  columns: 4;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 2em;
+  text-align: left;
+}
+.app .sources .sources-list .sources-item .custom-checkbox .custom-control-indicator {
+  background-color: rgba(150,150,150,0.9);
+}
+.app .news-list {
+  padding: 0 2em;
+}
+.app .news-list .news-source {
+  border-bottom: 1px solid #ccc;
+  color: #5cc7b2;
+  margin: 2em 0 1em 0;
+  padding-bottom: 0.3em;
+  text-transform: uppercase;
+}
+.app .news-list .card {
+  margin: 1em 0;
+}
+.app .news-list .card .btn {
+  background: #5cc7b2;
+  border-color: #47b7a1;
+}
+.app .news-list .card .date {
+  margin-bottom: 0.5em;
+  text-align: right;
+}
+.app .news-list .card .add-info {
+  margin-top: 1em;
+  text-align: right;
 }

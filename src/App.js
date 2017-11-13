@@ -76,9 +76,9 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app-header">
-          <h1 className="app-title">Nius</h1>
+          <h1 className="app-title"><i className="fa fa-newspaper-o" aria-hidden="true"></i> Nius</h1>
+          <Category sources={this.categories(this.state.sources)} value={this.state.category} onChange={this.handleCategoryChange} />
         </header>
-        <Category sources={this.categories(this.state.sources)} value={this.state.category} onChange={this.handleCategoryChange} />
         <Sources sources={this.state.sources} category={this.state.category} media={this.state.media} onChange={this.handleSourceChange} />
         <NewsList category={this.state.category} media={this.state.media} />
       </div>

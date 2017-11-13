@@ -39,20 +39,21 @@ class NewsList extends Component {
 	render() {
 		const news = this.state.news;
 		const category = this.props.category;
+		const newsCategory = [];
 		const newsElements = [];
-		console.log('news: ', news);
 
 		news.map(function(source) {
-			newsElements.push(<h2 key={source.source}>{source.source}</h2>);
+			newsCategory.push(<h2 className="news-source" key={source.source}>{source.source}</h2>);
 			source.articles.forEach((article) => {
 				newsElements.push(
 					<News key={article.publishedAt} category={category} data={article}  />
 				);
 			});
+			newsCategory.push(<div className="card-columns">{newsElements}</div>);
 		});
 
 		return (
-			<div>{newsElements}</div>
+			<div className="news-list">{newsCategory}</div>
 		)
 	}
 }
