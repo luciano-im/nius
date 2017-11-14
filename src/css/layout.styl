@@ -2,11 +2,27 @@
   .app-header
     background $baseColor
     color white
-    padding 2em 0
+    padding-bottom 2em
     text-align center
-    h1
+    a
+      color $linkColor
+    .app-info
       margin-bottom 1em
+      padding .5em 1.5em
+      span
+        display inline-block
+        width 50%
+        &.app-developed
+          text-align left
+        &.app-code
+          text-align right
+    .app-title
+      font-size 3.5em
+      margin 0
       text-shadow 2px 2px 0px $accentColor
+    .app-powered
+      display block
+      margin-bottom 3em
     .category-select
       border 3px solid $accentColor
       border-radius 5px

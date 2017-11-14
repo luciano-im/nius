@@ -44,12 +44,34 @@ a {
 .app .app-header {
   background: #5cc7b2;
   color: #fff;
-  padding: 2em 0;
+  padding-bottom: 2em;
   text-align: center;
 }
-.app .app-header h1 {
+.app .app-header a {
+  color: #5f86e0;
+}
+.app .app-header .app-info {
   margin-bottom: 1em;
+  padding: 0.5em 1.5em;
+}
+.app .app-header .app-info span {
+  display: inline-block;
+  width: 50%;
+}
+.app .app-header .app-info span.app-developed {
+  text-align: left;
+}
+.app .app-header .app-info span.app-code {
+  text-align: right;
+}
+.app .app-header .app-title {
+  font-size: 3.5em;
+  margin: 0;
   text-shadow: 2px 2px 0px #47b7a1;
+}
+.app .app-header .app-powered {
+  display: block;
+  margin-bottom: 3em;
 }
 .app .app-header .category-select {
   border: 3px solid #47b7a1;

@@ -2,8 +2,10 @@
   "name": "cra",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://luchisds.github.io/nius/",
   "dependencies": {
     "del": "^3.0.0",
+    "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-if": "^2.0.2",
@@ -20,6 +22,8 @@
     "yargs": "^10.0.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

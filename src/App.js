@@ -76,7 +76,12 @@ class App extends Component {
     return (
       <div className="app">
         <header className="app-header">
+          <div className="app-info">
+            <span className="app-developed">Designed & developed by <a href="http://www.luciano.im/">Luciano Muñoz</a></span>
+            <span className="app-code"><a href="https://github.com/luchisds/nius"><i className="fa fa-github" aria-hidden="true"></i> View Code</a></span>
+          </div>
           <h1 className="app-title"><i className="fa fa-newspaper-o" aria-hidden="true"></i> Nius</h1>
+          <span className="app-powered">Powered by <a href="https://newsapi.org/">News API</a></span>
           <Category sources={this.categories(this.state.sources)} value={this.state.category} onChange={this.handleCategoryChange} />
         </header>
         <Sources sources={this.state.sources} category={this.state.category} media={this.state.media} onChange={this.handleSourceChange} />
