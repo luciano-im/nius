@@ -3,7 +3,7 @@
 
 Nius App is a [React](https://reactjs.org/) app created with [Create React App](https://github.com/facebookincubator/create-react-app) that consumes [News API](https://newsapi.org/) data.
 
-This is my first React app, developed to learn the basis of React.
+This is my first React app, developed to learn the basis of React. I know it can be a lot better but for now I feel it is enough to bring it to light. Anyway, anyone who wants to contribute to the project will be welcome.
 
 ## Demo
 [Nius App](https://luchisds.github.io/nius/)
