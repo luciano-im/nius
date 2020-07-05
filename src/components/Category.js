@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Category extends Component {
+function Category(props) {
+  const { sources, value, onChange } = props;
 
-	render() {
-		let options = [];
-		this.props.sources.map(function(opt, i) {
-			options.push(<option key={i} value={opt}>{opt}</option>)
-		});
-
-		return (
-			<select className="category-select custom-select form-control form-control-lg" value={this.props.value} onChange={this.props.onChange}>
-				{options}
-			</select>
-		)
-	}
+  return (
+    <select
+      className="category-select custom-select form-control form-control-lg"
+      value={value}
+      onChange={onChange}
+    >
+      {sources.map((opt, i) => (
+        <option key={i} value={opt}>
+          {opt}
+        </option>
+      ))}
+    </select>
+  );
 }
 
 export default Category;

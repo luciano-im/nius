@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SourceRow extends Component {
+function SourceRow(props) {
+  const { sourceName, value, checked, onChange } = props;
 
-  render() {
-    const sourceName = this.props.sourceName;
-    const value = this.props.value;
-    const checked = this.props.checked;
-
-    return (
-      <label className="custom-control custom-checkbox">
-        <input className="custom-control-input" type="checkbox" value={value} checked={checked} onChange={this.props.onChange} />
-        <span class="custom-control-indicator"></span>
-        {sourceName}
-      </label>
-    )
-  }
-
+  return (
+    <label className="custom-control custom-checkbox">
+      <input
+        className="custom-control-input"
+        type="checkbox"
+        value={value}
+        checked={checked}
+        onChange={onChange}
+      />
+      <span class="custom-control-indicator"></span>
+      {sourceName}
+    </label>
+  );
 }
 
 export default SourceRow;

@@ -1,33 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SourceSingle from './SourceSingle';
 
-class Sources extends Component {
+function Sources(props) {
+  const { onChange, sources, media, category } = props;
 
-  render() {
-    const onChange = this.props.onChange;
-
-    let sourcesByCategory = {};
-		this.props.sources.map(function(source, i) {
-      if(!(source.category in sourcesByCategory)) {
-        sourcesByCategory[source.category] = []
-      }
-			sourcesByCategory[source.category].push(source)
-		});
-
-    let sources = [];
-    for (var k in sourcesByCategory) {
-      if(k === this.props.category) {
-        sources.push(<SourceSingle key={k} sources={sourcesByCategory[k]} category={k} media={this.props.media} onChange={onChange} />);
-      }
+  let sourcesByCategory = {};
+  sources.map((source, i) => {
+    if (!(source.category in sourcesByCategory)) {
+      sourcesByCategory[source.category] = [];
     }
+    sourcesByCategory[source.category].push(source);
+  });
 
-    return (
-      <div className="sources">
-        {sources}
-      </div>
-    )
+  let sourcesObj = [];
+  for (var k in sourcesByCategory) {
+    if (k === category) {
+      sourcesObj.push(
+        <SourceSingle
+          key={k}
+          sources={sourcesByCategory[k]}
+          category={k}
+          media={media}
+          onChange={onChange}
+        />
+      );
+    }
   }
 
+  return <div className="sources">{sourcesObj}</div>;
 }
 
 export default Sources;
