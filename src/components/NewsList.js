@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import News from './News';
 
 function NewsList(props) {
-  const API_KEY = '62a5f2039f7e4057acc89f4c1fbf17dd';
+  // const API_KEY = '62a5f2039f7e4057acc89f4c1fbf17dd';
   const [news, setNews] = useState([]);
   const { media, category } = props;
 
@@ -17,7 +17,9 @@ function NewsList(props) {
     // Else a source was deleted
     if (media.length > currentMedia.length) {
       const URL =
-        'https://newsapi.org/v1/articles?apiKey=' + API_KEY + '&source=';
+        'https://newsapi.org/v1/articles?apiKey=' +
+        process.env.REACT_APP_API_KEY +
+        '&source=';
       // Check added source to fetch it
       media.map((source, i) => {
         // If source not in currentMedia fetch it
