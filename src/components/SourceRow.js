@@ -12,7 +12,7 @@ function SourceRow(props) {
         checked={checked}
         onChange={onChange}
       />
-      <span class="custom-control-indicator"></span>
+      <span className="custom-control-indicator"></span>
       {sourceName}
     </label>
   );

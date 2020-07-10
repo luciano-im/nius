@@ -6,10 +6,13 @@ function News(props) {
     ? data.publishedAt.substring(0, 10)
     : 'Not available';
   let author = data.author ? data.author : 'Not available';
+  let newsImg = data.urlToImage ? true : false;
 
   return (
     <div className="card">
-      <img className="card-img-top" src={data.urlToImage} alt={data.title} />
+      {newsImg && (
+        <img className="card-img-top" src={data.urlToImage} alt={data.title} />
+      )}
       <div className="card-body">
         <div className="date">
           <small className="text-muted date">
