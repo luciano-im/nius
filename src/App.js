@@ -72,7 +72,7 @@ function App() {
             <a href="http://www.luciano.im/">Luciano Muñoz</a>
           </span>
           <span className="app-code">
-            <a href="https://github.com/luchisds/nius">
+            <a href="https://github.com/luciano-im/nius">
               <i className="fa fa-github" aria-hidden="true"></i> View Code
             </a>
           </span>
