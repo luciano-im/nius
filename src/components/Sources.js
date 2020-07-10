@@ -1,33 +1,30 @@
-import React, { Component } from 'react';
-import SourceSingle from './SourceSingle';
+import React from 'react';
+import SourceRow from './SourceRow';
 
-class Sources extends Component {
+function Sources(props) {
+  const { onChange, sources, media, category } = props;
 
-  render() {
-    const onChange = this.props.onChange;
+  // Filter sources by selected category
+  let categorySources = sources.filter((item) => {
+    return item.category === category;
+  });
 
-    let sourcesByCategory = {};
-		this.props.sources.map(function(source, i) {
-      if(!(source.category in sourcesByCategory)) {
-        sourcesByCategory[source.category] = []
-      }
-			sourcesByCategory[source.category].push(source)
-		});
-
-    let sources = [];
-    for (var k in sourcesByCategory) {
-      if(k === this.props.category) {
-        sources.push(<SourceSingle key={k} sources={sourcesByCategory[k]} category={k} media={this.props.media} onChange={onChange} />);
-      }
-    }
-
-    return (
-      <div className="sources">
-        {sources}
-      </div>
-    )
-  }
-
+  return (
+    <div className="sources">
+      <ul className={`sources-list ${category}`}>
+        {categorySources.map((source) => (
+          <li key={source.id} className="sources-item form-check">
+            <SourceRow
+              value={source.id}
+              sourceName={source.name}
+              checked={media.includes(source.id)}
+              onChange={onChange}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default Sources;
