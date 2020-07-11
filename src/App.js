@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   const fetchSources = () => {
-    const URL = 'https://newsapi.org/v1/sources?language=en';
+    const URL = `https://newsapi.org/v2/sources?language=en&apiKey=${process.env.REACT_APP_API_KEY}`;
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
