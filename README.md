@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Nius App
 
-## Available Scripts
+Nius App is a [React](https://reactjs.org/) app created with [Create React App](https://create-react-app.dev/) that consumes [News API](https://newsapi.org/) data.
 
-In the project directory, you can run:
+- 2017: I have created this app as my first React app, developed to learn the basis of React.
+- 2020: I have refactored this app with functional components and hooks, to update my skills with React.
 
-### `yarn start`
+You can see this project in action here: [https://luciano-im.github.io/nius/](https://luciano-im.github.io/nius/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Nius App](https://repository-images.githubusercontent.com/105317233/86d98a80-c35d-11ea-9e18-713c47421f03)
 
-### `yarn test`
+<br>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+[node.js](http://nodejs.org/download/) is required to get `npm`.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Download the code and try it for yourself:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Clone the repository: `https://github.com/luciano-im/nius.git`
+2. `cd nius`
+3. Install packages: `npm install`
+4. Launch project: `npm start`
+5. A browser tab will open at: `http://localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Browser Support
 
-### `yarn eject`
+The app will run in any current browser! ;)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Node.js
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Supports LTS version (v12.18.0).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Luciano Muñoz](http://www.luciano.im/)
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[MIT](https://github.com/luciano-im/nius/blob/master/LICENSE)
