@@ -1,0 +1,125 @@
+/* ======================================================================================================
+
+Project:    Nius
+Version:    1.0
+Author:     Luciano Muñoz :)
+Author URL: http://luciano.im
+
+
+-----------------------------------
+     TABLE OF CONTENTS
+-----------------------------------
+01 - Variables
+02 - Mixins, Functions, Animations, Placeholders, Helpers
+03 - Fontface
+04 - Base
+05 - Layout
+06 - Mediaquerys
+
+*/
+/* Styles */
+.h-list li {
+  display: inline-block;
+  list-style: none;
+}
+.no-transition {
+  transition: none !important;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-width: 380px;
+}
+html {
+  color: #3c3c3b;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+}
+.app .app-header {
+  background: #5cc7b2;
+  color: #fff;
+  padding-bottom: 2em;
+  text-align: center;
+}
+.app .app-header a {
+  color: #5f86e0;
+}
+.app .app-header .app-info {
+  margin-bottom: 1em;
+  padding: 0.5em 1.5em;
+}
+.app .app-header .app-info span {
+  display: inline-block;
+  width: 50%;
+}
+.app .app-header .app-info span.app-developed {
+  text-align: left;
+}
+.app .app-header .app-info span.app-code {
+  text-align: right;
+}
+.app .app-header .app-title {
+  font-size: 3.5em;
+  margin: 0;
+  text-shadow: 2px 2px 0px #47b7a1;
+}
+.app .app-header .app-powered {
+  display: block;
+  margin-bottom: 3em;
+}
+.app .app-header .category-select {
+  border: 3px solid #47b7a1;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 300px;
+}
+.app .sources {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 1.5em 1.5em 1em 1.5em;
+}
+.app .sources .sources-list {
+  columns: 4;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 2em;
+  text-align: left;
+}
+.app
+  .sources
+  .sources-list
+  .sources-item
+  .custom-checkbox
+  .custom-control-indicator {
+  background-color: rgba(150, 150, 150, 0.9);
+}
+.app .news-list {
+  padding: 0 2em;
+}
+.app .news-list .news-source {
+  border-bottom: 1px solid #ccc;
+  color: #5cc7b2;
+  margin: 2em 0 1em 0;
+  padding-bottom: 0.3em;
+  text-transform: uppercase;
+}
+.app .news-list .card {
+  margin: 1em 0;
+}
+.app .news-list .card .btn {
+  background: #5cc7b2;
+  border-color: #47b7a1;
+}
+.app .news-list .card .date {
+  margin-bottom: 0.5em;
+  text-align: right;
+}
+.app .news-list .card .add-info {
+  margin-top: 1em;
+  text-align: right;
+}

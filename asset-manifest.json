@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nius/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/nius/static/js/main.55547300.chunk.js",
+    "main.js.map": "/nius/static/js/main.55547300.chunk.js.map",
+    "runtime-main.js": "/nius/static/js/runtime-main.7104e874.js",
+    "runtime-main.js.map": "/nius/static/js/runtime-main.7104e874.js.map",
+    "static/js/2.52233b08.chunk.js": "/nius/static/js/2.52233b08.chunk.js",
+    "static/js/2.52233b08.chunk.js.map": "/nius/static/js/2.52233b08.chunk.js.map",
+    "index.html": "/nius/index.html",
+    "precache-manifest.faeece66c7778274ed86e6034a71e6df.js": "/nius/precache-manifest.faeece66c7778274ed86e6034a71e6df.js",
+    "service-worker.js": "/nius/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/nius/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.52233b08.chunk.js.LICENSE.txt": "/nius/static/js/2.52233b08.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7104e874.js",
+    "static/js/2.52233b08.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.55547300.chunk.js"
+  ]
+}
